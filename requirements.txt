@@ -1,0 +1,8 @@
+opencv-python 
+scikit-learn 
+pandas 
+pillow 
+scikit-image 
+matplotlib 
+ultralytics
+psycopg2-binary
