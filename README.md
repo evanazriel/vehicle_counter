@@ -1,6 +1,6 @@
 # Real-Time Traffic Vehicle Detection & PostgreSQL Database Integration
 
-Sistem pemantauan dan deteksi kendaraan lalu lintas secara *real-time* berbasis **Deep Learning (Ultralytics YOLOv8)** dan **Computer Vision (OpenCV)** yang terhubung langsung ke **Live Feed CCTV Publik DKI Jakarta (Balitower)** serta terintegrasi dengan **Basis Data Relasional PostgreSQL**.
+Sistem pemantauan dan deteksi kendaraan lalu lintas secara *real-time* berbasis **Deep Learning (Ultralytics YOLOv8)** dan **Computer Vision (OpenCV)** yang terhubung langsung ke **Live Feed CCTV Publik DKI Jakarta (Balitower)** serta terintegrasi dengan **Basis Data Relasional PostgreSQL**. 
 
 Sistem ini secara otomatis mendeteksi objek kendaraan (**Mobil**, **Motor**, **Bus**, dan **Truk**), menampilkan bounding box dan persentase akurasi (*confidence score*), serta mencatat data deteksi ke database PostgreSQL secara berkala dengan logika pencegahan data duplikat.
 ---
