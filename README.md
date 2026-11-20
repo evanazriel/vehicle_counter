@@ -122,7 +122,6 @@ if cursor and frame_count % 30 == 0:
   * Jika **baru pertama kali terlihat**, program menjalankan `INSERT` untuk mencatat baris baru.
 
 ---
-
 ### 5. Pembersihan Resource
 ```python
 if cursor:
@@ -134,6 +133,44 @@ cv2.destroyAllWindows()
 ```
 * Menutup kursor dan koneksi database dengan aman.
 * Melepaskan akses stream kamera dan menutup seluruh jendela tampilan video OpenCV saat pengguna menekan tombol **`q`**.
+---
+## Panduan Instalasi & Cara Menjalankan
+
+### 1. Persiapan Lingkungan & Dependensi
+Pastikan Python 3.10+ dan PostgreSQL sudah terpasang di komputer Anda.
+
+Install pustaka pendukung via terminal:
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Konfigurasi Database PostgreSQL
+Buka script di `Parking_Management.ipynb` dan sesuaikan kredensial koneksi database:
+```python
+host="localhost"
+database="nama_database_anda"
+user="postgres"
+password="password_anda"
+port="5432"
+```
+
+### 3. Menjalankan Program
+1. Buka file **`Parking_Management.ipynb`** di VS Code atau Jupyter Notebook.
+2. Jalankan sel kode deteksi CCTV.
+3. Jendela live stream CCTV Jl. Gerbang Pemuda Jakarta akan terbuka menampilkan kotak deteksi objek secara *real-time*.
+4. Tekan tombol **`q`** pada jendela video untuk menghentikan program.
+
+### 4. Memeriksa Data di PostgreSQL
+Jalankan kueri SQL berikut di pgAdmin atau sel baru notebook untuk melihat data yang berhasil masuk:
+```sql
+-- Melihat 20 data deteksi terbaru
+SELECT * FROM traffic_detection_logs ORDER BY id DESC LIMIT 20;
+
+-- Menghitung total deteksi per jenis kendaraan
+SELECT vehicle_type, COUNT(*) as total_terdeteksi, ROUND(AVG(confidence_score)::numeric, 2) as rata2_akurasi
+FROM traffic_detection_logs
+GROUP BY vehicle_type;
+```
 ---
 # Requirements
 * opencv-python 
