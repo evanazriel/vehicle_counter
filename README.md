@@ -9,10 +9,10 @@ Sistem ini secara otomatis mendeteksi objek kendaraan (**Mobil**, **Motor**, **B
 ## Fitur Utama
 * **Integrasi Live CCTV Publik:** Mengakses feed transmisi HLS (`.m3u8`) CCTV jalan raya Kota Jakarta (Satpol PP / Balitower) tanpa jeda (*zero buffering lag*).
 * **Klasifikasi Kendaraan Otomatis:** Mendeteksi 4 kategori utama transportasi jalan raya:
-  * 🚗 **Mobil (*Car*)**
-  * 🏍️ **Sepeda Motor (*Motorcycle*)**
-  * 🚌 **Bus (*Bus*)**
-  * 🚚 **Truk (*Truck*)**
+  *  **Mobil (*Car*)**
+  *  **Sepeda Motor (*Motorcycle*)**
+  *  **Bus (*Bus*)**
+  *  **Truk (*Truck*)**
 * **Bounding Box & Confidence Overlay:** Menampilkan kotak batas deteksi beserta nilai persentase keyakinan model secara dinamis pada video.
 * **Logging Transaksional PostgreSQL:** Menyimpan jenis kendaraan dan tingkat akurasi ke PostgreSQL.
 * **Logika Anti-Duplikasi (Pencegahan Data Kembar):** Jika kendaraan dengan nilai akurasi (*conf score*) yang sama terdeteksi kembali, sistem **hanya memperbarui waktu (*timestamp*)** data tersebut alih-alih membuat baris baru yang memenuhi database.
@@ -144,7 +144,7 @@ cv2.destroyAllWindows()
 
 ---
 
-##  Dashboard Visualisasi & Analisis Data (Bab 4 Evaluasi)
+##  Dashboard Visualisasi & Analisis Data
 
 Data yang tersimpan di PostgreSQL diekstrak menggunakan **Pandas** dan divisualisasikan dengan **Matplotlib** & **Seaborn**:
 
